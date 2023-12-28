@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--head-->
+  <%- include('layouts/heading'); -%>
+  <style>
+    
+.pass {
+  color: rgb(0, 240, 0);
+}
+
+.fail {
+  color: red;
+}
+
+.warning {
+  color: rgb(212, 212, 40);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#myButton {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#myButton:hover {
+  background-color: #208FFF;
+  cursor: pointer;
+  border: none;
+}
+
+  </style>
+  <body>
+    <!--Navbar-->
+    <%- include('layouts/nav', {userType:userType}); -%>
+    <!--Title-->
+
+    <div class="heading">
+      <h3>Welcome To G Test page</h3>
+    </div>
+    <% if (typeof ResultInfo === 'object' && ResultInfo) { %>
+      <% ResultInfo.forEach(result => { %>
+        <% if (result.appointment.testType === 'G Test') { %> <!-- Check if testType is 'G Test' -->
+          <div class="UserResult">
+            <h2 id="Resulth2" class="<%= result.Result === 'Pass' ? 'pass' : result.Result === 'Fail' ? 'fail' : 'warning' %>">
+              <%= result.Result %>
+            </h2>
+          </div>
+        <% } %>
+      <% }); %>
+    <% } %>
+    
+    <div class="info">
+      <div class="getnumber">
+        <!-- <form action="KK" method="post">
+          <h5>Insert Your License Number</h5>
+          <input
+            type="text"
+            id="License_No"
+            name="License_No"
+            placeholder="License Number"
+            required
+          />
+          <button type="submit" id="retrieveDatabutton">Retrieve Data</button>
+        </form> -->
+        <div class="retrive">
+          <div class="userinfo">
+          <form action="update" method="post" id="form2">
+            <fieldset id="fieldset" class="fildset">
+              <% if (typeof userinfo == 'object' && userinfo) { %> <%
+              userinfo.forEach(user => { %>
+
+              <legend class="float">User Details</legend>
+              <label for="Firstname">First Name:</label>
+              <input
+                type="text"
+                value="<%= user.Firstname %>"
+                id="Firstname"
+                name="Firstname"
+                readonly
+              />
+              <label for="Lastname">Last Name:</label>
+              <input
+                type="text"
+                value="<%= user.Lastname %>"
+                id="Lastname"
+                name="Lastname"
+                readonly
+              />
+              <label for="License_No">License No:</label>
+              <input
+                type="text"
+                value="<%= user.License_No %>"
+                id="License_No"
+                name="License_No"
+                readonly
+              />
+              <label for="Age">Age:</label>
+              <input
+                type="text"
+                value="<%= user.Age %>"
+                id="Age"
+                name="Age"
+                readonly
+              />
+              <label for="DOB">Date of Birth:</label>
+              <input
+                type="text"
+                value="<%= user.DOB %>"
+                id="DOB"
+                name="DOB"
+                readonly
+              />
+            </fieldset>
+          </div>
+          <div class="carinfo">
+            <fieldset id="fieldset" class="fieldset">
+              <legend class="float">Car Information</legend>
+              <label for="make">Make:</label>
+              <input
+                type="text"
+                value="<%= user.car_details.make %>"
+                id="make"
+                name="make"
+              />
+              <label for="model">Model:</label>
+              <input
+                type="text"
+                value="<%= user.car_details.model %>"
+                id="model"
+                name="model"
+              />
+              <label for="year">Year:</label>
+              <input
+                type="text"
+                value="<%= user.car_details.year %>"
+                id="year"
+                name="year"
+              />
+              <label for="numberplat">Nmber Plate:</label>
+              <input
+                type="text"
+                value="<%= user.car_details.platno %>"
+                id="platno"
+                name="platno"
+              />
+            </fieldset>
+
+            <button type="submit" class="btn" id="submit">Update</button>
+          </form>
+
+          <% }); %> <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="G_book">
+      <form action="/G_Book" method="post">
+        <label for="selectedDate"> Select Date:</label>
+        <input type="date" id="selectedDate"  min="da" name="selectedDate" required>
+        <button type="submit" id="myButton" class="Gbtn">Click here to View Appointments</button>
+    </form>
+  
+    <div class="app">
+      <% for (var i = 0; i < timeArray.length; i++) { %>
+        <form action="/G_Slot %>" method="post">
+            <input type="text" id="make" readonly name="date" value="<%= dateString %>">
+            <input type="text" id="make" readonly name="time" value="<%= timeArray[i] %>">
+            <button type="submit" id="myButton"  class="Gbtn1">Book This Slot</button>
+        </form>    
+<% } %>
+    </div>
+     
+    </div>
+    
+  </body>
+</html>
