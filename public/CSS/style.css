@@ -1,0 +1,83 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.G2_heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.heading_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(112, 118, 123);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.getnumber {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+#retrieveDatabutton {
+  display: block;
+  border-radius: 20px;
+  border: none;
+  background-color: #208fff;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  width: 100%;
+}
+
+#retrieveDatabutton:hover {
+  background-color: rgb(10, 241, 60);
+  color: black;
+}
+
+
+.retrive {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-top: 20px;
+  width: 500px;
+  gap: 25px;
+}
+
+.carinfo {
+  margin-top: -55px;
+}
