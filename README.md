@@ -51,7 +51,7 @@ Access the Application: Navigate to http://localhost:4000 in your web browser to
 ![image](https://github.com/yv18/DriveTest/assets/147085086/6960fb50-2051-4bad-8eea-52c2d7813bd8)
 
 
-### Admin Desk View as he/she only access the appointment.
+### Admin Desk View as he/she can only access the appointment.
 ![image](https://github.com/yv18/DriveTest/assets/147085086/590cbf9f-2216-4137-8b74-3f8e9148b146)
 
 ### Appointment Section - Admin can not add same date and same time.
@@ -59,7 +59,7 @@ Access the Application: Navigate to http://localhost:4000 in your web browser to
 
 
 
-### Examiner Desk View as he only access Examiner tab
+### Examiner Desk View as he/she can only access Examiner tab
 ![image](https://github.com/yv18/DriveTest/assets/147085086/5bcd4869-4fa0-492b-b1ad-8093b667b38c)
 
 ### Examiner Tab - from here he/she can upadate the test result
@@ -69,7 +69,7 @@ Access the Application: Navigate to http://localhost:4000 in your web browser to
 ### If user login for the first time after G1 he/she needs to fill the details first.
 ![image](https://github.com/yv18/DriveTest/assets/147085086/44097ebd-dfc8-4ea6-bec3-dbd2aff97e5c)
 
-### if user is already register and passed the G2 test then he/she redirect to G test page
+### if user is already registered and passed the G2 test then he/she redirect to the G test page
 ![image](https://github.com/yv18/DriveTest/assets/147085086/ca4dd714-cdf0-4b18-95ed-c8aae78fe815)
 
 ### if user wants to book an appointment for G2 or G test so for that they need to book the slot
