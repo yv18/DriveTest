@@ -1,0 +1,30 @@
+<script>
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+	
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+
+
+
+
+function comparePasswords() {
+            var password = document.getElementById("password").value;
+            var Repassword = document.getElementById("Re-password").value;
+
+            if (password === Repassword) {
+                window.alert("Your Account has been created");
+            } else {
+                document.getElementById("result").innerHTML = "Passwords do not match.";
+            }
+        }
+
+</script>
