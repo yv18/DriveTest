@@ -1,0 +1,113 @@
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.appointment {
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+
+input[type="date"],
+input[type="time"],
+input[type="submit"] {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+.container {
+display: block;
+} */
+
+.YV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid;
+  border-color: rgb(67, 67, 242);
+  border-radius: 4px;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
+#btn {
+  padding-top: 10px;
+  border-radius: 20px;
+	border: none;
+	background-color: #208fff;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+#btn:hover {
+	background-color: rgb(10, 241, 60);
+	color: white;
+	cursor: pointer;
+}
+
+select {
+  padding: 10px;
+  border-radius: 4px;
+}

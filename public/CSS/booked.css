@@ -1,0 +1,85 @@
+.bookedSlots {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    margin-top: 10px;
+    
+}
+
+#Resulth2 {
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+#ResultG2h2 {
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.info {
+    margin: 10px 0;
+}
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+#booked input {
+    width: 200px;
+    margin: 0;
+}
+
+#booked select {
+    width:200px;
+    margin: 15px 0;
+}
+
+.appointment li {
+    list-style-type: none;
+}
+
+#booked #bookedbtn {
+    background-color: rgb(88, 88, 88);
+    color: white;
+    border:none;
+}
+
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.G_book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.G_book input {
+ width: 200px;
+}
+
+.Gbtn1 {
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(51, 45, 45);
+    color: white;
+    padding: 10px 25px;
+}
+
+.Gbtn {
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+}
