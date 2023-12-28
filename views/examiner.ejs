@@ -1,0 +1,80 @@
+
+<%- include('layouts/heading'); -%>
+<%- include('layouts/nav' , {userType:userType}); -%>
+  
+<body>
+  <div id="head">
+    <h1>Drive Test Results</h1>
+  </div>
+
+  <div class="filter">
+    <select id="testFilter" onchange="filterAppointments()">
+      <option value="all">All</option>
+      <option value="G Test">G Test</option>
+      <option value="G2 Test">G2 Test</option>
+    </select>
+  </div>
+  
+      
+  <div class="bookedSlots">
+        <% for (const appointment of bookedAppointments) { %>
+
+          <div class="appointment">
+            <ul>
+            <li>
+                <h4>Update Driver Result</h4>
+                <form id="booked" action="/updateResult" method="POST">
+                    <label for="firstname">Username:</label>
+                    <input type="text" name="username" value="<%= appointment.username %>" readonly>
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" id="firstname" name="firstname" value="<%= appointment.Firstname %>" readonly>
+  
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" id="lastname" name="lastname" value="<%= appointment.Lastname %>" readonly>
+  
+                    <label for="licenseNo">License Number:</label>
+                    <input type="text" id="licenseNo" name="licenseNo" value="<%= appointment.License_No %>" readonly>
+  
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" value="<%= appointment.Age %>" readonly>
+  
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" value="<%= appointment.appointment.date.toISOString().split('T')[0] %>" readonly>
+  
+                    <label for="appointmentTime">Appointment Time:</label>
+                    <input type="text" id="appointmentTime" name="appointmentTime" value="<%= appointment.appointment.time %>" readonly>
+
+                    <label for="appointmentTime">Test Type</label>
+                    <input type="text" id="testType" name="testType" value="<%= appointment.appointment.testType %>" readonly>
+  
+  
+                    <select id="result" class="form-control" name="Result" required>
+                      <option value="Pass">Pass</option>
+                      <option value="Fail">Fail</option>
+                    </select>
+  
+                    <input id="bookedbtn" type="submit" value="Update Appointment">
+                </form>
+            </li>
+            </ul>
+          </div>
+        <% } %>
+      </div>
+  
+</body>
+<script>
+  function filterAppointments() {
+    var filter = document.getElementById("testFilter").value;
+    var appointments = document.querySelectorAll(".appointment");
+
+    appointments.forEach(function(appointment) {
+      var testType = appointment.querySelector('input[name="testType"]').value;
+      if (filter === "all" || testType === filter) {
+        appointment.style.display = "block";
+      } else {
+        appointment.style.display = "none";
+      }
+    });
+  }
+</script>
+</html>

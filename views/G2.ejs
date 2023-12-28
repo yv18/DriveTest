@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--heading-->
+  <%- include('layouts/heading'); -%>
+  <style>
+    .pass {
+  color: rgb(0, 240, 0);
+}
+
+.fail {
+  color: red;
+}
+
+.warning {
+  color: rgb(212, 212, 40);
+}
+
+
+#app {
+  width: 200px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#myButton {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#myButton:hover {
+  background-color: #208FFF;
+  cursor: pointer;
+  border: none;
+}
+
+  </style>
+  <body>
+    <!--Navbar-->
+    <%- include('layouts/nav', {userType:userType}); -%>
+
+    <!--Form-->
+    <div class="G2_heading">
+      <h3>Welcome To G2 Test page</h3>
+    </div>
+    <% if (typeof ResultInfo === 'object' && ResultInfo) { %>
+      <% ResultInfo.forEach(result => { %>
+        <% if (result.appointment.testType === 'G2 Test') { %> 
+          <div class="UserResult">
+            <h2 id="ResultG2h2" class="<%= result.Result === 'Pass' ? 'pass' : result.Result === 'Fail' ? 'fail' : 'warning' %>">
+              <%= result.Result %>
+            </h2>
+          </div>
+        <% } %>
+      <% }); %>
+    <% } %>
+    <div class="form">
+      <div class="input">
+        <form id="details" action="/posts/Data" method="POST">
+          <h4>Personal Information</h4>
+          <input
+            type="text"
+            id="Firstname"
+            name="Firstname"
+            class="form-control"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="Lastname"
+            name="Lastname"
+            class="form-control"
+            placeholder="Last Name"
+            required
+          />
+          <input
+            type="text"
+            id="License_No"
+            name="License_No"
+            class="form-control"
+            placeholder="License Number – must be 8 characters (alpha numeric) "
+            required
+          />
+          <input type="number" id="Age" name="Age" placeholder="Age" required />
+          <input
+            type="date"
+            id="DOB"
+            name="DOB"
+            class="form-control"
+            placeholder="Date Of Birth"
+            required
+          />
+
+          <h5><label id="car">Enter Your Car Details</label></h5>
+          <input
+            type="text"
+            id="make"
+            name="make"
+            class="form-control"
+            placeholder="Make"
+            required
+          />
+
+          <input
+            type="text"
+            id="model"
+            name="model"
+            class="form-control"
+            placeholder="Model"
+            required
+          />
+
+          <input
+            type="number"
+            id="year"
+            name="year"
+            class="form-control"
+            placeholder="Year"
+            required
+          />
+
+          <input
+            type="text"
+            id="platno"
+            name="platno"
+            class="form-control"
+            placeholder="Plat number"
+            required
+          />
+          <div class="btn">
+            <button type="submit" id="submit">Submit</button>
+          </div>
+        </form>
+        <form id="app" action="/book_appointmnet" method="post">
+          <label for="selectedDate"> Select Date:</label>
+          <input type="date" id="selectedDate"  min="da" name="selectedDate" required>
+          <button type="submit" id="myButton">Click here to View Appointments</button>
+      </form>
+
+    <div class="app">
+      <% for (var i = 0; i < timeArray.length; i++) { %>
+        <form  id="app" action="/save_aapointment %>" method="post">
+            <input type="text" id="make" readonly name="date" value="<%= dateString %>">
+            <input type="text" id="make" readonly name="time" value="<%= timeArray[i] %>">
+            <button type="submit"  id="myButton">Book This Slot</button>
+        </form>    
+<% } %>
+    </div>
+        
+      </div>
+    </div>
+
+
+  </body>
+  <script>
+document.getElementById('myButton').addEventListener('click', () => {
+    const currentDate = new Date().toISOString().split('T')[0];
+    document.getElementById('date').min = currentDate;
+    document.getElementById('selectedDate').min = currentDate;       
+});
+
+
+
+  </script>
+</html>
