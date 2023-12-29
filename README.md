@@ -75,7 +75,7 @@ Access the Application: Navigate to http://localhost:4000 in your web browser to
 ### if user wants to book an appointment for G2 or G test so for that they need to book the slot
 ![image](https://github.com/yv18/DriveTest/assets/147085086/27f87b2f-380d-4d91-8d1e-f137bdf30233)
 
-### it shows result pending untill Examiner donot update.
+### it shows result pending untill Examiner not update the result.
 ![image](https://github.com/yv18/DriveTest/assets/147085086/d541e9a3-530f-4cee-95af-848cf0e4fc90)
 
 ### Final Result
